@@ -3,10 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#8a5a44">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="Ethereal Sarees">
-    <meta name="description" content="Discover our exquisite collection of handcrafted sarees, woven with tradition and designed for the modern woman. Shop our latest collections of silk, cotton, and bridal sarees.">
     <title>Ethereal Sarees - Timeless Elegance Woven with Tradition</title>
     
     <!-- Bootstrap CSS -->
@@ -36,12 +32,12 @@
             --border-color: #e8e0d0;
         }
         
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-            -webkit-touch-callout: none;
+          
         }
         
         body {
@@ -71,12 +67,18 @@
             font-weight: 700;
             color: var(--primary-color);
             margin-right: auto;
+            text-decoration: none;
+        }
+        
+        .navbar-brand:hover {
+            color: var(--primary-color);
         }
         
         .navbar-toggler {
             border: none;
-            padding: 0;
+            padding: 5px 10px;
             font-size: 24px;
+            color: var(--primary-color);
             order: 2;
         }
         
@@ -86,11 +88,20 @@
         }
         
         .navbar-toggler-icon {
-            background-image: url("beautiful-young-woman-wearing-sari.jpg");
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%238a5a44' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
         
         .navbar-collapse {
             flex-basis: 100%;
+        }
+        
+        .navbar-nav {
+            flex-direction: row;
+            gap: 5px;
+        }
+        
+        .nav-item {
+            margin: 0;
         }
         
         .nav-link {
@@ -100,8 +111,9 @@
             transition: color 0.3s ease;
             position: relative;
             padding: 8px 0;
-            -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
-            touch-action: manipulation;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         
         .nav-link:hover {
@@ -217,8 +229,6 @@
             transition: all 0.3s ease;
             display: inline-block;
             text-decoration: none;
-            -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
-            touch-action: manipulation;
         }
         
         .btn-primary-custom:hover {
@@ -574,8 +584,6 @@
             justify-content: center;
             cursor: pointer;
             transition: all 0.3s ease;
-            -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
-            touch-action: manipulation;
         }
         
         .product-action-btn:hover {
@@ -933,8 +941,6 @@
             font-size: 24px;
             cursor: pointer;
             z-index: 1;
-            -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
-            touch-action: manipulation;
         }
         
         .quick-view-body {
@@ -946,6 +952,7 @@
             flex: 1 1 50%;
             min-width: 300px;
         }
+        
         
         .quick-view-img img {
             width: 100%;
@@ -1104,29 +1111,6 @@
         }
         
         /* Responsive Styles */
-        @media (max-width: 1200px) {
-            .hero-content h1 {
-                font-size: 3.5rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2.2rem;
-            }
-            
-            .product-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-                gap: 25px;
-            }
-            
-            .navbar-brand {
-                font-size: 26px;
-            }
-            
-            .lookbook-item {
-                height: 500px;
-            }
-        }
-        
         @media (max-width: 992px) {
             .hero-content h1 {
                 font-size: 3rem;
@@ -1137,7 +1121,7 @@
             }
             
             .product-grid {
-                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
                 gap: 20px;
             }
             
@@ -1158,51 +1142,58 @@
                 font-size: 18px;
             }
             
-            .lookbook-item {
-                height: 450px;
+            .navbar-nav {
+                flex-direction: row;
             }
             
-            .craft-item {
-                margin-bottom: 50px;
+            .nav-link::after {
+                display: block;
             }
         }
         
         @media (max-width: 768px) {
+           body, .row,.column,.container{overflow-x: hidden !important;}
             .navbar {
                 padding: 12px 0;
             }
             
             .navbar-brand {
-                font-size: 22px;
+                font-size: 20px;
+                margin-bottom: 0;
             }
             
             .navbar-collapse {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background-color: white;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-                padding: 15px;
-                margin-top: 5px;
-                border-top: 1px solid var(--border-color);
+                position: static;
+                background-color: transparent;
+                box-shadow: none;
+                padding: 0;
+                margin-top: 10px;
+                border-top: 1px solid #f0f0f0;
+                padding-top: 10px;
             }
             
             .navbar-nav {
                 flex-direction: column;
+                gap: 0;
             }
             
             .nav-item {
-                margin-bottom: 10px;
+                margin-bottom: 0;
+                border-bottom: 1px solid #f0f0f0;
             }
             
             .nav-link {
                 margin: 0;
-                padding: 10px 0;
-                border-bottom: 1px solid #f0f0f0;
+                padding: 12px 0;
+                border-bottom: none;
+                font-size: 15px;
             }
             
             .nav-link::after {
+                display: none;
+            }
+            
+            .nav-link:hover::after {
                 display: none;
             }
             
@@ -1215,11 +1206,20 @@
                 border-radius: 0;
                 background-color: #fafafa;
                 padding-left: 20px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                border-top: 1px solid #f0f0f0;
+            }
+            
+            .dropdown-item {
+                padding: 10px 15px;
+                font-size: 14px;
             }
             
             .header-icons {
                 gap: 15px;
                 margin-left: 15px;
+                display: none !important;
             }
             
             .header-icons a {
@@ -1275,34 +1275,36 @@
             .quick-view-info {
                 flex: 1 1 100%;
             }
-            
-            .video-thumbnails {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-                gap: 15px;
-            }
         }
         
         @media (max-width: 576px) {
             .navbar {
                 padding: 10px 0;
             }
-            
-            .navbar-brand {
-                font-size: 20px;
-            }
+               body, .row,.column,.container{overflow-x: hidden !important;}
+          .navbar-brand {
+        font-size: 1rem;
+    }   
+    .navbar-toggler {
+        padding: 4px 8px !important;
+    }
             
             .navbar-collapse {
-                top: 95%;
-                padding: 10px;
+                margin-top: 5px;
             }
             
             .nav-link {
                 font-size: 14px;
-                padding: 8px 0;
+                padding: 10px 0;
             }
             
             .dropdown-menu {
                 padding-left: 15px;
+                font-size: 13px;
+            }
+            
+            .dropdown-item {
+                padding: 8px 10px;
                 font-size: 13px;
             }
             
@@ -1363,139 +1365,70 @@
                 right: 20px;
                 font-size: 24px;
             }
-            
-            .video-thumbnails {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            
-            .hero-buttons .btn-primary-custom,
-            .hero-buttons .btn-outline-custom {
-                display: block;
-                width: 80%;
-                margin: 10px auto;
-            }
-        }
-        
-        @media (max-width: 400px) {
-            .product-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .product-img {
-                height: 300px;
-            }
-            
-            .lookbook-item {
-                height: 350px;
-            }
-            
-            .lookbook-content {
-                max-width: 100%;
-                padding: 15px;
-            }
-        }
-        
-        /* Image optimization for all devices */
-        img {
-            max-width: 100%;
-            height: auto;
-            object-fit: cover;
-            display: block;
-        }
-        
-        .hero-bg,
-        .lookbook-item,
-        .category-img img,
-        .craft-img img,
-        .product-img img,
-        .slider-product-img img,
-        .video-thumbnail img {
-            object-fit: cover;
-            object-position: center;
-            width: 100%;
-        }
-        
-        /* Fix for SVG icons */
-        .fas, .far, .fab {
-            width: auto;
-            height: auto;
-        }
-        
-        /* Improved touch targets for mobile */
-        @media (max-width: 768px) {
-            .nav-link, .dropdown-item, .product-action-btn, .size-option, .color-option {
-                min-height: 44px;
-                display: flex;
-                align-items: center;
-            }
-            
-            .product-action-btn {
-                width: 44px;
-                height: 44px;
-            }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
-<header class="navbar fixed-top" style="background-color: white;">
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg w-100">
-            <a class="navbar-brand" href="#">Ethereal Sarees</a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Shop
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">New Arrivals</a></li>
-                            <li><a class="dropdown-item" href="#">Silk Sarees</a></li>
-                            <li><a class="dropdown-item" href="#">Cotton Sarees</a></li>
-                            <li><a class="dropdown-item" href="#">Bridal Collection</a></li>
-                            <li><a class="dropdown-item" href="#">Handloom Sarees</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Collections
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                            <li><a class="dropdown-item" href="#">Festive Special</a></li>
-                            <li><a class="dropdown-item" href="#">Wedding Collection</a></li>
-                            <li><a class="dropdown-item" href="#">Casual Wear</a></li>
-                            <li><a class="dropdown-item" href="#">Office Wear</a></li>
-                            <li><a class="dropdown-item" href="#">Party Wear</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Lookbook</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="header-icons">
-                <a href="#"><i class="far fa-heart"></i></a>
-                <a href="#"><i class="fas fa-shopping-bag"></i></a>
-            </div>
-        </nav>
+<header class="navbar navbar-expand-sm fixed-top" style="background-color: white;">
+    <div class="container-fluid px-3">
+
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">Ethereal Sarees</a>
+
+        <!-- Toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#navbarContent" aria-controls="navbarContent" 
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Nav Items -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav ms-auto">
+
+                <!-- Shop -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                        Shop
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">New Arrivals</a></li>
+                        <li><a class="dropdown-item" href="#">Silk Sarees</a></li>
+                        <li><a class="dropdown-item" href="#">Cotton Sarees</a></li>
+                        <li><a class="dropdown-item" href="#">Bridal Collection</a></li>
+                        <li><a class="dropdown-item" href="#">Handloom Sarees</a></li>
+                    </ul>
+                </li>
+
+                <!-- Collections -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                        Collections
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Festive Special</a></li>
+                        <li><a class="dropdown-item" href="#">Wedding Collection</a></li>
+                        <li><a class="dropdown-item" href="#">Casual Wear</a></li>
+                        <li><a class="dropdown-item" href="#">Office Wear</a></li>
+                        <li><a class="dropdown-item" href="#">Party Wear</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a class="nav-link" href="#">Lookbook</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="far fa-heart"></i></a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-shopping-bag"></i></a></li>
+
+            </ul>
+        </div>
     </div>
 </header>
+
     
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="hero-section container-fluid">
         <div class="hero-bg"></div>
         <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
             <h1>Timeless Elegance</h1>
@@ -1508,7 +1441,7 @@
     </section>
     
     <!-- Lifestyle Lookbook Section -->
-    <section class="lookbook-section section-padding">
+    <section id="lookbook" class="lookbook-section section-padding">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
                 <h2>Lifestyle Lookbook</h2>
@@ -1565,7 +1498,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="craft-img">
-                            <img src="https://t4.ftcdn.net/jpg/16/32/27/59/240_F_1632275950_HHpdX9UKXImtcRmCFmC1vgocsoPkh9hl.jpg" alt="Weaving Process" loading="lazy">
+                            <img src="https://t4.ftcdn.net/jpg/16/32/27/59/240_F_1632275950_HHpdX9UKXImtcRmCFmC1vgocsoPkh9hl.jpg" alt="Weaving Process">
                             <div class="play-icon">
                                 <i class="fas fa-play"></i>
                             </div>
@@ -1599,7 +1532,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 order-lg-2">
                         <div class="craft-img">
-                            <img src="https://t3.ftcdn.net/jpg/17/69/19/50/240_F_1769195053_piNgS5MKbAU60hJYQsAw1Q16BMdECHDu.jpg" alt="Fabric Quality" loading="lazy">
+                            <img src="https://t3.ftcdn.net/jpg/17/69/19/50/240_F_1769195053_piNgS5MKbAU60hJYQsAw1Q16BMdECHDu.jpg" alt="Fabric Quality">
                         </div>
                     </div>
                     <div class="col-lg-6 order-lg-1">
@@ -1640,7 +1573,7 @@
                 <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="category-card">
                         <div class="category-img">
-                            <img src="https://static.wixstatic.com/media/4594f8_6f9a817c465e44f788aa21307f5057fb~mv2.jpg/v1/fill/w_480,h_638,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_6f9a817c465e44f788aa21307f5057fb~mv2.jpg" alt="Silk Sarees" loading="lazy">
+                            <img src="https://static.wixstatic.com/media/4594f8_6f9a817c465e44f788aa21307f5057fb~mv2.jpg/v1/fill/w_480,h_638,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_6f9a817c465e44f788aa21307f5057fb~mv2.jpg" alt="Silk Sarees">
                         </div>
                         <div class="category-content">
                             <h3>Silk Sarees</h3>
@@ -1653,7 +1586,7 @@
                 <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="category-card">
                         <div class="category-img">
-                            <img src="https://static.wixstatic.com/media/4594f8_3f382970dae54d248115919bea11f4ec~mv2.jpg/v1/fill/w_500,h_666,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_3f382970dae54d248115919bea11f4ec~mv2.jpg" alt="Bridal Sarees" loading="lazy">
+                            <img src="https://static.wixstatic.com/media/4594f8_3f382970dae54d248115919bea11f4ec~mv2.jpg/v1/fill/w_500,h_666,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_3f382970dae54d248115919bea11f4ec~mv2.jpg" alt="Bridal Sarees">
                         </div>
                         <div class="category-content">
                             <h3>Bridal Sarees</h3>
@@ -1666,7 +1599,7 @@
                 <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="category-card">
                         <div class="category-img">
-                            <img src="https://static.wixstatic.com/media/4594f8_a501a5843f1543bbafe3bbcb7eb255a6~mv2.jpg/v1/fill/w_589,h_785,al_c,q_85,usm_0.66_1.00_0.01/4594f8_a501a5843f1543bbafe3bbcb7eb255a6~mv2.jpg" alt="Daily Wear" loading="lazy">
+                            <img src="https://static.wixstatic.com/media/4594f8_a501a5843f1543bbafe3bbcb7eb255a6~mv2.jpg/v1/fill/w_589,h_785,al_c,q_85,usm_0.66_1.00_0.01/4594f8_a501a5843f1543bbafe3bbcb7eb255a6~mv2.jpg" alt="Daily Wear">
                         </div>
                         <div class="category-content">
                             <h3>Daily Wear</h3>
@@ -1679,7 +1612,7 @@
                 <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
                     <div class="category-card">
                         <div class="category-img">
-                            <img src="https://static.wixstatic.com/media/4594f8_690082e3a32a48c6b42e5f0ee19e3063~mv2.jpg/v1/fill/w_500,h_600,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_690082e3a32a48c6b42e5f0ee19e3063~mv2.jpg" alt="Handloom Collection" loading="lazy">
+                            <img src="https://static.wixstatic.com/media/4594f8_690082e3a32a48c6b42e5f0ee19e3063~mv2.jpg/v1/fill/w_500,h_600,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_690082e3a32a48c6b42e5f0ee19e3063~mv2.jpg" alt="Handloom Collection">
                         </div>
                         <div class="category-content">
                             <h3>Handloom Collection</h3>
@@ -1704,7 +1637,7 @@
                 <div class="product-card">
                     <div class="product-badge">New</div>
                     <div class="product-img">
-                        <img src="https://static.wixstatic.com/media/4594f8_dfd2f0c9704543bcace628dd819db5ba~mv2.jpg/v1/fill/w_500,h_666,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_dfd2f0c9704543bcace628dd819db5ba~mv2.jpg" alt="Product" loading="lazy">
+                        <img src="https://static.wixstatic.com/media/4594f8_dfd2f0c9704543bcace628dd819db5ba~mv2.jpg/v1/fill/w_500,h_666,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_dfd2f0c9704543bcace628dd819db5ba~mv2.jpg" alt="Product">
                         <div class="product-actions">
                             <button class="product-action-btn quick-view-btn" data-product-id="1">
                                 <i class="fas fa-eye"></i>
@@ -1729,7 +1662,7 @@
                 <div class="product-card">
                     <div class="product-badge">New</div>
                     <div class="product-img">
-                        <img src="https://static.wixstatic.com/media/4594f8_131f269855b54f7992a28455d672e01e~mv2.jpg/v1/fill/w_500,h_677,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_131f269855b54f7992a28455d672e01e~mv2.jpg" alt="Product" loading="lazy">
+                        <img src="https://static.wixstatic.com/media/4594f8_131f269855b54f7992a28455d672e01e~mv2.jpg/v1/fill/w_500,h_677,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_131f269855b54f7992a28455d672e01e~mv2.jpg" alt="Product">
                         <div class="product-actions">
                             <button class="product-action-btn quick-view-btn" data-product-id="2">
                                 <i class="fas fa-eye"></i>
@@ -1754,7 +1687,7 @@
                 <div class="product-card">
                     <div class="product-badge">New</div>
                     <div class="product-img">
-                        <img src="https://static.wixstatic.com/media/4594f8_f61bc714c4c342a192ec97d00a8d25f1~mv2.jpg/v1/fill/w_500,h_686,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_f61bc714c4c342a192ec97d00a8d25f1~mv2.jpg" alt="Product" loading="lazy">
+                        <img src="https://static.wixstatic.com/media/4594f8_f61bc714c4c342a192ec97d00a8d25f1~mv2.jpg/v1/fill/w_500,h_686,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_f61bc714c4c342a192ec97d00a8d25f1~mv2.jpg" alt="Product">
                         <div class="product-actions">
                             <button class="product-action-btn quick-view-btn" data-product-id="3">
                                 <i class="fas fa-eye"></i>
@@ -1779,7 +1712,7 @@
                 <div class="product-card">
                     <div class="product-badge">New</div>
                     <div class="product-img">
-                        <img src="https://static.wixstatic.com/media/4594f8_ebb613d05c6e45deae8f4105bf5b0978~mv2.jpg/v1/fill/w_589,h_785,al_c,q_85,usm_0.66_1.00_0.01/4594f8_ebb613d05c6e45deae8f4105bf5b0978~mv2.jpg" alt="Product" loading="lazy">
+                        <img src="https://static.wixstatic.com/media/4594f8_ebb613d05c6e45deae8f4105bf5b0978~mv2.jpg/v1/fill/w_589,h_785,al_c,q_85,usm_0.66_1.00_0.01/4594f8_ebb613d05c6e45deae8f4105bf5b0978~mv2.jpg" alt="Product">
                         <div class="product-actions">
                             <button class="product-action-btn quick-view-btn" data-product-id="4">
                                 <i class="fas fa-eye"></i>
@@ -1816,7 +1749,7 @@
                 <div class="product-card">
                     <div class="product-badge">Trending</div>
                     <div class="product-img">
-                        <img src="https://media.gettyimages.com/id/1266816177/photo/indian-woman-greeting.jpg?s=612x612&w=0&k=20&c=7cJSuZGiWMVtVw7ffpDmxBuotEM5Kam9s5omM0N66uk=" alt="Product" loading="lazy">
+                        <img src="https://media.gettyimages.com/id/1266816177/photo/indian-woman-greeting.jpg?s=612x612&w=0&k=20&c=7cJSuZGiWMVtVw7ffpDmxBuotEM5Kam9s5omM0N66uk=" alt="Product">
                         <div class="product-actions">
                             <button class="product-action-btn quick-view-btn" data-product-id="5">
                                 <i class="fas fa-eye"></i>
@@ -1840,7 +1773,7 @@
                 <div class="product-card">
                     <div class="product-badge">Trending</div>
                     <div class="product-img">
-                        <img src="https://media.gettyimages.com/id/2176682545/photo/a-bengali-hindu-woman-dresses-in-a-traditional-saree-during-the-durga-puja-festival-at-a.jpg?s=612x612&w=0&k=20&c=vMbtEDlPOnNWUSJgaxuVU0GGWMGZqrWjjmBK8W13bEc=" alt="Product" loading="lazy">
+                        <img src="https://media.gettyimages.com/id/2176682545/photo/a-bengali-hindu-woman-dresses-in-a-traditional-saree-during-the-durga-puja-festival-at-a.jpg?s=612x612&w=0&k=20&c=vMbtEDlPOnNWUSJgaxuVU0GGWMGZqrWjjmBK8W13bEc=" alt="Product">
                         <div class="product-actions">
                             <button class="product-action-btn quick-view-btn" data-product-id="6">
                                 <i class="fas fa-eye"></i>
@@ -1864,7 +1797,7 @@
                 <div class="product-card">
                     <div class="product-badge">Trending</div>
                     <div class="product-img">
-                        <img src="https://media.gettyimages.com/id/928241470/photo/indian-model-wearing-an-exquisite-gujarati-bridal-lehenga-with-traditional-opulent-jewellery.jpg?s=612x612&w=0&k=20&c=jaEB6cTy697TraTZWIXQrRyciOkUoOpq3i30MBroy7U=" alt="Product" loading="lazy">
+                        <img src="https://media.gettyimages.com/id/928241470/photo/indian-model-wearing-an-exquisite-gujarati-bridal-lehenga-with-traditional-opulent-jewellery.jpg?s=612x612&w=0&k=20&c=jaEB6cTy697TraTZWIXQrRyciOkUoOpq3i30MBroy7U=" alt="Product">
                         <div class="product-actions">
                             <button class="product-action-btn quick-view-btn" data-product-id="7">
                                 <i class="fas fa-eye"></i>
@@ -1888,7 +1821,7 @@
                 <div class="product-card">
                     <div class="product-badge">Trending</div>
                     <div class="product-img">
-                        <img src="https://media.gettyimages.com/id/1460005847/photo/portrait-of-a-beautiful-woman-in-a-black-saree-at-a-dinner-party-looking-at-the-camera.jpg?s=612x612&w=0&k=20&c=hcN3epj4NHHtpk8MjbhIVkkfNhHcvR_hbNoO6v1Cl18=" alt="Product" loading="lazy">
+                        <img src="https://media.gettyimages.com/id/1460005847/photo/portrait-of-a-beautiful-woman-in-a-black-saree-at-a-dinner-party-looking-at-the-camera.jpg?s=612x612&w=0&k=20&c=hcN3epj4NHHtpk8MjbhIVkkfNhHcvR_hbNoO6v1Cl18=" alt="Product">
                         <div class="product-actions">
                             <button class="product-action-btn quick-view-btn" data-product-id="8">
                                 <i class="fas fa-eye"></i>
@@ -1925,7 +1858,7 @@
                     <div class="swiper-slide">
                         <div class="slider-product-card">
                             <div class="slider-product-img">
-                                <img src="https://static.wixstatic.com/media/4594f8_18026ce3797e455980715ef6085a8b7b~mv2.jpg/v1/fill/w_500,h_666,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_18026ce3797e455980715ef6085a8b7b~mv2.jpg" alt="Product" loading="lazy">
+                                <img src="https://static.wixstatic.com/media/4594f8_18026ce3797e455980715ef6085a8b7b~mv2.jpg/v1/fill/w_500,h_666,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_18026ce3797e455980715ef6085a8b7b~mv2.jpg" alt="Product">
                             </div>
                             <div class="slider-product-info">
                                 <h4 class="product-name">Magenta Silk Saree</h4>
@@ -1939,7 +1872,7 @@
                     <div class="swiper-slide">
                         <div class="slider-product-card">
                             <div class="slider-product-img">
-                                <img src="https://static.wixstatic.com/media/4594f8_95f6f9f8d286488f8b00f4dd26a96b01~mv2.jpg/v1/fill/w_500,h_667,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_95f6f9f8d286488f8b00f4dd26a96b01~mv2.jpg" alt="Product" loading="lazy">
+                                <img src="https://static.wixstatic.com/media/4594f8_95f6f9f8d286488f8b00f4dd26a96b01~mv2.jpg/v1/fill/w_500,h_667,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_95f6f9f8d286488f8b00f4dd26a96b01~mv2.jpg" alt="Product">
                             </div>
                             <div class="slider-product-info">
                                 <h4 class="product-name">Purple Royal Silk</h4>
@@ -1953,7 +1886,7 @@
                     <div class="swiper-slide">
                         <div class="slider-product-card">
                             <div class="slider-product-img">
-                                <img src="https://static.wixstatic.com/media/4594f8_f7f4385ee7f541fe975db74324df72bd~mv2.jpg/v1/fill/w_500,h_767,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_f7f4385ee7f541fe975db74324df72bd~mv2.jpg" alt="Product" loading="lazy">
+                                <img src="https://static.wixstatic.com/media/4594f8_f7f4385ee7f541fe975db74324df72bd~mv2.jpg/v1/fill/w_500,h_767,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_f7f4385ee7f541fe975db74324df72bd~mv2.jpg" alt="Product">
                             </div>
                             <div class="slider-product-info">
                                 <h4 class="product-name">Emerald Green Silk</h4>
@@ -1967,7 +1900,7 @@
                     <div class="swiper-slide">
                         <div class="slider-product-card">
                             <div class="slider-product-img">
-                                <img src="https://static.wixstatic.com/media/4594f8_2bd023db5851404d99567ef8a3aa1d34~mv2.jpg/v1/fill/w_500,h_667,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_2bd023db5851404d99567ef8a3aa1d34~mv2.jpg" alt="Product" loading="lazy">
+                                <img src="https://static.wixstatic.com/media/4594f8_2bd023db5851404d99567ef8a3aa1d34~mv2.jpg/v1/fill/w_500,h_667,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_2bd023db5851404d99567ef8a3aa1d34~mv2.jpg" alt="Product">
                             </div>
                             <div class="slider-product-info">
                                 <h4 class="product-name">Coral Pink Silk</h4>
@@ -1981,7 +1914,7 @@
                     <div class="swiper-slide">
                         <div class="slider-product-card">
                             <div class="slider-product-img">
-                                <img src="https://static.wixstatic.com/media/4594f8_b033c51f2aef4686931529b8d0e457df~mv2.jpg/v1/fill/w_500,h_667,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_b033c51f2aef4686931529b8d0e457df~mv2.jpg" alt="Product" loading="lazy">
+                                <img src="https://static.wixstatic.com/media/4594f8_b033c51f2aef4686931529b8d0e457df~mv2.jpg/v1/fill/w_500,h_667,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_b033c51f2aef4686931529b8d0e457df~mv2.jpg" alt="Product">
                             </div>
                             <div class="slider-product-info">
                                 <h4 class="product-name">Navy Blue Silk</h4>
@@ -2010,7 +1943,7 @@
                 <div class="product-card">
                     <div class="product-badge">Exclusive</div>
                     <div class="product-img">
-                        <img src="https://static.wixstatic.com/media/4594f8_84298972b633492896728d88cf1bafae~mv2.jpg/v1/fill/w_500,h_637,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_84298972b633492896728d88cf1bafae~mv2.jpg" alt="Product" loading="lazy">
+                        <img src="https://static.wixstatic.com/media/4594f8_84298972b633492896728d88cf1bafae~mv2.jpg/v1/fill/w_500,h_637,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_84298972b633492896728d88cf1bafae~mv2.jpg" alt="Product">
                         <div class="product-actions">
                             <button class="product-action-btn quick-view-btn" data-product-id="9">
                                 <i class="fas fa-eye"></i>
@@ -2034,7 +1967,7 @@
                 <div class="product-card">
                     <div class="product-badge">Exclusive</div>
                     <div class="product-img">
-                        <img src="https://static.wixstatic.com/media/4594f8_519fe6ebad4f427d902a75d9cfa1aa7c~mv2.jpg/v1/fill/w_500,h_667,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_519fe6ebad4f427d902a75d9cfa1aa7c~mv2.jpg" alt="Product" loading="lazy">
+                        <img src="https://static.wixstatic.com/media/4594f8_519fe6ebad4f427d902a75d9cfa1aa7c~mv2.jpg/v1/fill/w_500,h_667,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_519fe6ebad4f427d902a75d9cfa1aa7c~mv2.jpg" alt="Product">
                         <div class="product-actions">
                             <button class="product-action-btn quick-view-btn" data-product-id="10">
                                 <i class="fas fa-eye"></i>
@@ -2058,9 +1991,9 @@
                 <div class="product-card">
                     <div class="product-badge">Exclusive</div>
                     <div class="product-img">
-                        <img src="https://static.wixstatic.com/media/4594f8_4e5f8206918d4dc0898c6c0a8c32908b~mv2.jpg/v1/fill/w_500,h_667,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_4e5f8206918d4dc0898c6c0a8c32908b~mv2.jpg" alt="Product" loading="lazy">
+                        <img src="https://static.wixstatic.com/media/4594f8_4e5f8206918d4dc0898c6c0a8c32908b~mv2.jpg/v1/fill/w_500,h_667,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_4e5f8206918d4dc0898c6c0a8c32908b~mv2.jpg" alt="Product">
                         <div class="product-actions">
-                            <button class="product-action-btn quick-view-btn" data-product-id="11">
+                            <button class="product-action-btn quick-view-id="11"">
                                 <i class="fas fa-eye"></i>
                             </button>
                             <button class="product-action-btn">
@@ -2082,7 +2015,7 @@
                 <div class="product-card">
                     <div class="product-badge">Exclusive</div>
                     <div class="product-img">
-                        <img src="https://static.wixstatic.com/media/4594f8_a7e9d2cf4c8241ada231bccca572a536~mv2.jpg/v1/fill/w_500,h_667,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_a7e9d2cf4c8241ada231bccca572a536~mv2.jpg" alt="Product" loading="lazy">
+                        <img src="https://static.wixstatic.com/media/4594f8_a7e9d2cf4c8241ada231bccca572a536~mv2.jpg/v1/fill/w_500,h_667,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4594f8_a7e9d2cf4c8241ada231bccca572a536~mv2.jpg" alt="Product">
                         <div class="product-actions">
                             <button class="product-action-btn quick-view-btn" data-product-id="12">
                                 <i class="fas fa-eye"></i>
@@ -2124,7 +2057,7 @@
             
             <div class="video-thumbnails" data-aos="fade-up" data-aos-delay="300">
                 <div class="video-thumbnail">
-                    <img src="https://media.istockphoto.com/id/93355119/photo/indian-saris.jpg?s=612x612&w=0&k=20&c=afmfiTJg0VAmIY6P_TJ_JYsTfGhUdevv18WXQRUZ8NQ=" alt="Video Thumbnail" loading="lazy">
+                    <img src="https://media.istockphoto.com/id/93355119/photo/indian-saris.jpg?s=612x612&w=0&k=20&c=afmfiTJg0VAmIY6P_TJ_JYsTfGhUdevv18WXQRUZ8NQ=" alt="Video Thumbnail">
                     <div class="video-thumbnail-overlay">
                         <div class="video-play-btn">
                             <i class="fas fa-play"></i>
@@ -2132,7 +2065,7 @@
                     </div>
                 </div>
                 <div class="video-thumbnail">
-                    <img src="https://t3.ftcdn.net/jpg/00/98/19/78/360_F_98197811_Ca7QLVE7RBFo3clDpvOSFEXPfJMZd17f.jpg" alt="Video Thumbnail" loading="lazy">
+                    <img src="https://t3.ftcdn.net/jpg/00/98/19/78/360_F_98197811_Ca7QLVE7RBFo3clDpvOSFEXPfJMZd17f.jpg" alt="Video Thumbnail">
                     <div class="video-thumbnail-overlay">
                         <div class="video-play-btn">
                             <i class="fas fa-play"></i>
@@ -2140,7 +2073,7 @@
                     </div>
                 </div>
                 <div class="video-thumbnail">
-                    <img src="https://www.parisera.com/cdn/shop/files/DSC_4455-1_Copy.jpg?v=1750314826" alt="Video Thumbnail" loading="lazy">
+                    <img src="https://www.parisera.com/cdn/shop/files/DSC_4455-1_Copy.jpg?v=1750314826" alt="Video Thumbnail">
                     <div class="video-thumbnail-overlay">
                         <div class="video-play-btn">
                             <i class="fas fa-play"></i>
@@ -2148,7 +2081,7 @@
                     </div>
                 </div>
                 <div class="video-thumbnail">
-                    <img src="https://www.parisera.com/cdn/shop/files/DSC_0372.jpg?v=1745850463&width=1946" alt="Video Thumbnail" loading="lazy">
+                    <img src="https://www.parisera.com/cdn/shop/files/DSC_0372.jpg?v=1745850463&width=1946" alt="Video Thumbnail">
                     <div class="video-thumbnail-overlay">
                         <div class="video-play-btn">
                             <i class="fas fa-play"></i>
@@ -2238,7 +2171,7 @@
             </button>
             <div class="quick-view-body">
                 <div class="quick-view-img">
-                    <img src="https://picsum.photos/seed/quickview/600/800.jpg" alt="Product" loading="lazy">
+                    <img src="https://picsum.photos/seed/quickview/600/800.jpg" alt="Product">
                 </div>
                 <div class="quick-view-info">
                     <h2 class="quick-view-title">Royal Blue Silk Saree</h2>
@@ -2489,3 +2422,4 @@
     </script>
 </body>
 </html>
+
